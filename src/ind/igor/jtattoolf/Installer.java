@@ -1,6 +1,8 @@
 package ind.igor.jtattoolf;
 
+import com.jtattoo.plaf.smart.SmartLookAndFeel;
 import java.awt.Font;
+import java.util.Properties;
 import javax.swing.UIManager;
 import org.openide.modules.ModuleInstall;
 
@@ -16,6 +18,7 @@ public class Installer extends ModuleInstall {
 
 	protected void preInit() {
 		try {
+			SmartLookAndFeel.setTheme(getThemeProperties());
 			UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");
 			int uiFontSize = 12;
 			setUIFont (new javax.swing.plaf.FontUIResource(new Font("DroidSans", Font.PLAIN, uiFontSize)));
@@ -46,5 +49,13 @@ public class Installer extends ModuleInstall {
 				UIManager.put(key, f);
 			}
 		}
+	}
+
+	private Properties getThemeProperties() {
+		Properties props = new Properties();
+		props.put("logoString", "NetBeans");
+		props.put("windowDecoration", "off");
+
+		return props;
 	}
 }
