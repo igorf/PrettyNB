@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: ind.igor.jtattoolf
+OpenIDE-Module-Localizing-Bundle: ind/igor/jtattoolf/Bundle.properties
+OpenIDE-Module-Specification-Version: 0.2
+OpenIDE-Module-Install: ind/igor/jtattoolf/Installer.class
